@@ -16,6 +16,8 @@ async function fetchMovieDetails(movieName) {
 
         if (data.Response === "False") {
             console.error(`❌ Movie not found: ${movieName}`);
+            return res.status(404).json({ error: "Movie not found" });
+
             return null;
         }
         console.log(data);

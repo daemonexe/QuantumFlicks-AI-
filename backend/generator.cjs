@@ -50,7 +50,7 @@ async function getMovieSummary(prompt, movie) {
     try {
         const response = await groq.chat.completions.create({
             messages: [{ role: "user", content: `${prompt} ${movie}` }],
-            model: "llama-3.2-11b-vision-preview",
+            model: "gemma2-9b-it",
         });
 
         if (!response?.choices?.length) {

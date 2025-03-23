@@ -1,0 +1,416 @@
+:root {
+    background-color: rgb(0, 0, 0);
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    background-color: rgba(14, 14, 14, 0.216);
+    width: 500px;
+    height: 35px;
+    margin: 5px auto;
+}
+
+/* PAGE LAYOUT */
+.lp {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* NAVIGATION BUTTONS */
+.navButton {
+    display: flex;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(143, 143, 143);
+    width: 25%;
+    height: 90%;
+    bottom: 7px;
+    justify-content: center;
+    align-items: center;
+}
+.option-button:disabled:hover {
+    background-color: #444 !important;
+    color: #aaa !important;
+    cursor: not-allowed;
+  }
+.navButtonSel {
+    display: flex;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 25%;
+    height: 90%;
+    bottom: 7px;
+    transition: width 3s;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navButtonSelected {
+    display: flex;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(143, 143, 143);
+    width: 25%;
+    height: 90%;
+    bottom: 5px;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* MOVIE CARD CONTAINER */
+.movieCard {
+    position: relative;
+    width: 75%;
+    height: 80%;
+    border-radius: 25px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-start; 
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+}
+
+.quizCard {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    padding-top: 5vw;
+}
+
+.quizCard p
+{
+    padding: 0px;
+}
+.quizCard h1
+{
+    padding: 0px;
+}
+
+.options
+{
+    display: grid;
+    flex-direction: column;
+}
+
+.quiz-pane
+{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.options button
+{
+    width: auto;
+    height: 50px;
+}
+
+.movieBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(100px); 
+    opacity: 0.5;
+    z-index: -1; 
+}
+
+/* COVER IMAGE (LEFT SIDE) */
+.coverimage {
+    display: flex;
+    align-items: center; /* Centers the image vertically */
+    justify-content: flex-start; /* Aligns it to the left */
+    width: auto; /* Adjust size as needed */
+    height: auto;
+    margin-right: 25px;
+    margin-left: 50px; 
+    border-radius: 10%;
+}
+/* MOVIE CONTENT (RIGHT SIDE) */
+.movie-content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 75%;
+    margin-top: 100px;
+    height: 85%;
+    color: white;
+}
+
+.movie-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.movie-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.poster
+{
+    width: 250px;
+    border-radius: 10%;
+
+}
+
+.heading
+{
+    position: relative;
+    top:-50px;
+}
+
+.scores
+{
+    top:-90px;
+
+    position: relative;
+}
+
+.message
+{
+    top:-120px;
+
+    position: relative;
+}
+
+.reset {
+    top:-110px;
+
+    position: relative;
+}
+
+.title
+{
+    margin: 0px;
+    font-size: 45px;
+    padding: 10px;
+}
+
+.parah
+{
+    margin: 0px;
+
+    padding:10px;
+}
+
+.summaryButton
+{
+    display: flex;
+    border-radius: 20px;
+    border: dashed 1px rgba(255, 255, 255, 0.361);
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(144, 144, 144);
+    width: 20%;
+    height: 10%;
+    bottom: 5px;
+    justify-content: center;
+    text-align: center;
+    align-items: center; /* Centers the image vertically */
+
+}
+.checker
+{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.summaryContent {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: 95%; 
+    margin: 0 auto;
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    padding: 10px;
+    word-wrap: break-word; /* Ensures text breaks properly */
+    text-align: justify;
+    justify-content: left;
+
+}
+
+.summaryContent p {
+    text-align: justify; /* ✅ Keeps it readable */
+    word-wrap: break-word; /* ✅ Prevents long words from breaking layout */
+    width: 900px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    width: 100%; /* Ensures it takes full width */
+    max-width: 100%; /* Prevents it from being smaller than the parent */
+    display: block; /* Ensures it behaves like a block element */
+    text-align: justify; /* Distributes text evenly */
+    word-wrap: break-word; /* Prevents text from breaking layout */
+    overflow-wrap: break-word; /* Ensures long words wrap correctly */
+    padding-bottom: 50px;
+}
+
+.wrong-answer
+{
+    background-color: red;
+    color: white;
+}
+
+.correct-answer
+{
+    background-color: rgb(98, 202, 102);
+    color: white;
+
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+.summaryContent li {
+    font-size: large;
+    text-align: justify; /* ✅ Keeps it readable */
+    word-wrap: break-word; /* ✅ Prevents long words from breaking layout */
+    width: 900px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(187, 185, 185);
+    width: 100%; /* Ensures it takes full width */
+    max-width: 100%; /* Prevents it from being smaller than the parent */
+    display: block; /* Ensures it behaves like a block element */
+    text-align: justify; /* Distributes text evenly */
+    word-wrap: break-word; /* Prevents text from breaking layout */
+    overflow-wrap: break-word; /* Ensures long words wrap correctly */
+
+}
+
+  @media (max-width: 768px) {
+
+    .heading
+    {
+        font-size: 30px;
+        top:20px;
+    }
+
+    .scores
+    {
+        font-size: 30px;
+        top:5px;
+
+    }
+
+    .message
+    {
+        top:-3px
+
+    }
+
+    .reset
+    {
+        top: 15px;
+
+    }
+
+    .quiz-pane
+    {
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .quizCard
+    {
+        font-size: 19px;
+        padding: 10px;
+
+    }
+
+    .navbar
+    {
+        width: 300px;
+    }
+    .movieCard
+    {
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: none;
+        height: 90%;
+    }
+    .movie-content
+    {
+        margin: 0px;
+    }
+
+    .coverimage
+    {
+        margin: 0px;
+    }
+    .summaryContent
+    {
+        padding: 20px;
+        font-size: 15px;
+        margin-right: 5px;
+    }
+
+
+    .summaryContent p
+    {
+        font-size: 15px;
+    }
+    .summaryContent li
+    {
+        font-size: 15px;
+    }
+    .summaryButton
+    {
+        width: 100%;
+    }
+  }
+
+
+
+  /* custom scroll bar */
+
+  .summaryContent::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4); /* Scroll handle color */
+    border-radius: 10px;
+  }
+
+  /* Scrollbar Track */
+.summaryContent::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Scrollbar Thumb */
+  .summaryContent::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4); /* Scroll handle color */
+    border-radius: 10px;
+  }
+  
+  /* Scrollbar Track Background */
+  .summaryContent::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0); /* Track background */
+    border-radius: 10px;
+  }

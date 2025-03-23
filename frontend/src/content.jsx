@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom"; // ✅ Import useNavigate
-import './website.css';
+import './css/website.css';
 
 const pageVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { duration: 0.5 } },
   exit: { opacity: 0, transition: { duration: 0.25 } }
 };
+
+
+
 
 
 function NewPage() {
@@ -18,7 +21,17 @@ function NewPage() {
   );
   const navigate = useNavigate();
 
-
+  useEffect(() => {
+    if (!movieData || !movieData.details || !movieData.details.Title) {
+      navigate("/404");
+    }
+  }, [movieData, navigate]);
+  
+  if (!movieData || !movieData.details || !movieData.details.Title) {
+    return null; // prevent rendering before redirect
+  }
+  
+  
 
   // ✅ Use `useEffect` to update state
   useEffect(() => {
@@ -30,7 +43,7 @@ function NewPage() {
 
   
   const changePageToSummary = async () => {
-    navigate(`/summary`, { state: { movieData: movieData } }); // ✅ Pass data to next page
+    navigate(`/wiki`, { state: { movieData: movieData } }); // ✅ Pass data to next page
   }
   const changeTohOME = async () => {
     navigate(`/home`, { state: { movieData: movieData } }); // ✅ Pass data to next page
@@ -50,7 +63,7 @@ function NewPage() {
         <div className="navbar">
           <img className="movieBg" src={coverImage} alt="Movie Background" />
           <button onClick={changeTohOME} className="navButtonSel"> Home</button>
-          <button onClick={changePageToSummary} className="navButton"> Summary</button>
+          <button onClick={changePageToSummary} className="navButton"> Wiki</button>
           <button onClick={changeToQuiz} className="navButton"> Quiz</button>
         </div>
 
@@ -67,8 +80,7 @@ function NewPage() {
           <p className="parah"> Awards : {movieData?.details.Awards}</p>
 
           <p className="parah"> {movieData?.details.Plot}</p>
-          <button className="summaryButton"> View Summary </button>
-          {/* ✅ Display JSON data if available */}
+          <button onClick={changePageToSummary} className="summaryButton"> Read Wiki </button>
           </div>
         </div>
       </div>

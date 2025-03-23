@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import './App.css';
+import './css/App.css';
 import Icon from "./assets/logo.png";
-import videoBg from "./assets/videoBg.mp4";
+import videoBg from "/videoBG.mp4";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGreaterThan } from "react-icons/fa";
 
 function Home() {
   const [inputValue, setInputValue] = useState('');
@@ -24,7 +27,7 @@ function Home() {
 
       try {
         const response = await fetch(
-          `http://www.omdbapi.com/?s=${searchTerm}&apikey=3816ca8e`
+          `https://www.omdbapi.com/?s=${searchTerm}&apikey=3816ca8e`
         );
         const data = await response.json();
 
@@ -45,8 +48,8 @@ function Home() {
   // ✅ Handle selection from dropdown
   const handleSelectMovie = (movie) => {
     setSelectedMovie(movie);
-    setInputValue(movie.Title); // ✅ Fill input field
-    setMovies([]); // Hide dropdown
+    setInputValue(movie.Title); 
+    setMovies([]); 
   };
 
   // Page transition animation variants
@@ -68,26 +71,28 @@ function Home() {
           body: JSON.stringify({ movieName: inputValue }),
         });
 
-        const data = await response.json(); // ✅ Get response JSON
+        const data = await response.json(); // Get response JSON
         setIsLoading(false);
 
-        navigate(`/home`, { state: { movieData: data } }); // ✅ Pass data to next page
+        navigate(`/home`, { state: { movieData: data } }); 
 
       } catch (error) {
         console.error("Error:", error);
         setIsLoading(false);
+        navigate(`/404`)
       }
 
       setInputValue('');
     }
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e) => {com
     if (e.key === 'Enter') {
       handleSubmit();
     }
   };
 
+  
   return (
     <>
       <motion.div className='lp newpage'
@@ -101,31 +106,41 @@ function Home() {
           autoPlay 
           loop 
           muted 
-          onLoadedMetadata={(e) => e.target.playbackRate = 1} 
+          onLoadedMetadata={(e) => e.target.playbackRate = 2} 
         ></video>
 
         <div className='content'>
           <div className='fieldBox'>
 
-            {/* ✅ Show loading spinner when isLoading is true */}
             {isLoading ? (
               <motion.div
                 className="loading-spinner"
-                initial={{ opacity: 0, scale: 0.5 }}
+                initial={{ opacity: 1, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1, rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
               />
             ) : (
               <>
-                <img className="logo" src={Icon} alt="Logo" />
+                  <div className='socials'>
+                  <button className='soc-button' onClick={() => window.open('https://github.com')}>
+                     
+                  <FaGithub />
+                  </button>
+                  <button className='soc-button'  onClick={() => window.open('https://www.linkedin.com/in/thanujan18')}>
+                  <FaLinkedin />
+                  </button>
+
+                  </div>
 
                 {/* ✅ Animated Heading */}
                 <motion.h1
-                  className='name'
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, ease: "easeOut" }}
+                    className="name"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
                 >
+
+  
                   QuantumFlicks.AI
                 </motion.h1>
 
@@ -139,8 +154,8 @@ function Home() {
                   "AI-powered platform that automatically generates fan pages for movies and TV shows."
                 </motion.p>
 
-                <div className="search-container">
-                  <input
+                <motion.div className="search-container">
+                  <motion.input
                     className='input'
                     type="text"
                     placeholder="Enter a movie or TV show name..."
@@ -154,18 +169,23 @@ function Home() {
 
                   {/* ✅ Dropdown menu */}
                   {movies.length > 0 && (
-                    <ul className="dropdown-menu">
+                    <motion.ul className="dropdown-menu">
                       {movies.map((movie) => (
                         <li key={movie.imdbID} onClick={() => handleSelectMovie(movie)}>
                           <img src={movie.Poster} alt={movie.Title} width="40" />
                           {movie.Title} ({movie.Year})
                         </li>
                       ))}
-                    </ul>
+                    </motion.ul>
                   )}
-                </div>
+                  <motion.button className="search" onClick={handleSubmit}>
+                  <FaGreaterThan />
 
-                <button onClick={handleSubmit}>Generate</button>
+                    
+                  </motion.button>
+
+                </motion.div>
+
               </>
             )}
           </div>

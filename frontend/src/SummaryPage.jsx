@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom"; // ✅ Import useNavigate
-import './website.css';
+import './css/website.css';
 
 const pageVariants = {
   initial: { opacity: 0 },
@@ -30,7 +30,7 @@ function SumPage() {
 
   
   const changePageToSummary = async () => {
-    navigate(`/summary`, { state: { movieData: movieData } }); // ✅ Pass data to next page
+    navigate(`/wiki`, { state: { movieData: movieData } }); // ✅ Pass data to next page
   }
   const changeTohOME = async () => {
     navigate(`/home`, { state: { movieData: movieData } }); // ✅ Pass data to next page
@@ -50,13 +50,12 @@ function SumPage() {
         <div className="navbar">
           <img className="movieBg" src={coverImage} alt="Movie Background" />
           <button onClick={changeTohOME} className="navButton"> Home</button>
-          <button onClick={changePageToSummary} className="navButtonSel"> Summary</button>
+          <button onClick={changePageToSummary} className="navButtonSel"> Wiki</button>
           <button onClick={changeToQuiz} className="navButton"> Quiz</button>
         </div>
 
-        <div className="movieCard">
+        <div className="summaryContent" dangerouslySetInnerHTML={{ __html: movieData?.movieSummary }}></div>
 
-          </div>
         </div>
     </div>
   );
