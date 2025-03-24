@@ -87,6 +87,11 @@
     padding: 20px;
 }
 
+.fieldbox
+{
+    color: red;
+}
+
 .quizCard {
     position: relative;
     width: 100%;
@@ -210,7 +215,7 @@
 {
     margin: 0px;
     font-size: 45px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .parah
@@ -311,7 +316,7 @@ button:disabled {
     .heading
     {
         font-size: 30px;
-        top:20px;
+        top:40px;
     }
 
     .scores
@@ -340,13 +345,33 @@ button:disabled {
         margin-top: 25px;
         margin-bottom: 25px;
     }
-    .quizCard
-    {
-        font-size: 19px;
-        padding: 10px;
 
+    .quizCard h1
+    {
+        font-size: 60px;
     }
 
+    .quizCard p
+    {
+        padding-right: 30px;
+        padding-left: 30px;
+        font-size: 20px;
+    }
+
+    .quizCard
+    {
+        margin-bottom: 30px;
+        font-size: 19px;
+        padding: 10px;
+        display: flex;
+        overflow-y: auto;
+        height: 90%;
+    }
+    .checker
+    {
+        display: flex;
+        flex-direction: column;
+    }
     .navbar
     {
         width: 300px;
@@ -356,9 +381,10 @@ button:disabled {
         flex-direction: column;
         overflow-y: auto;
         overflow-x: none;
-        height: 100%;
-        
+        height: 85%;
     }
+
+
     .movie-content
     {
         margin: 0px;
@@ -375,9 +401,15 @@ button:disabled {
         margin-right: 5px;
     }
 
-
+    .summaryContent
+    {
+        width: 90%;
+        padding-right: 100px;
+    }
     .summaryContent p
     {
+        padding-right: 30px;
+
         font-size: 15px;
     }
     .summaryContent li
