@@ -122,7 +122,7 @@ function Home() {
             ) : (
               <>
                   <div className='socials'>
-                  <button className='soc-button' onClick={() => window.open('https://github.com')}>
+                  <button className='soc-button' onClick={() => window.open('https://github.com/daemonexe/QuantumFlicks-AI-')}>
                      
                   <FaGithub />
                   </button>
