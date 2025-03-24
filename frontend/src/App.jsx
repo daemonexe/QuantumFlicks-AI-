@@ -9,9 +9,11 @@ import Quiz from './Quiz.jsx';
 import NotFound from './404.jsx';
 
 
+
 function App() {
   return (
     <>
+
     <Router>
       <Routes>
       <Route path="/" element={<Home />} />
