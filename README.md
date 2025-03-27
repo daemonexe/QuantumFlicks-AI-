@@ -1,3 +1,51 @@
-# QuantFlicks.AI
-### QuantumFlicks.ai is an AI-powered movie and TV show info generator. Users can search or generate detailed pages for their favorite shows, complete with summaries, characters, trivia, and even a quiz section — all powered by intelligent data generation.
+# 🎬 QuantumFlicks.ai
 
+Not your average movie site.
+
+**QuantumFlicks.ai** is an AI-powered platform where you can search for any movie or show and instantly get AI-generated summaries, character bios, trivia, and quizzes — all styled with a fast, animated UI and powered by Groq LLM.
+
+---
+
+## 📌 Features
+
+- 🔍 **Built-in Search Engine**  
+  Easily look up movies or TV shows with a smooth, real-time search interface.
+
+- 🧠 **AI-Generated Content**  
+  Get dynamic summaries, character bios, and trivia using **Groq LLM**.
+
+- 🎥 **Real-Time IMDb Data**  
+  Pulls accurate details from **IMDb** to enhance content depth and reliability.
+
+- ❓ **Interactive Quizzes**  
+  Test your knowledge with custom AI-generated quizzes for each show/movie.
+
+- ⚡ **Blazing Fast UI**  
+  Powered by **React** and **Vite** for top-tier speed and performance.
+
+- 🎨 **Clean Animations**  
+  Sleek transitions and UI movement with **Framer Motion**.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category       | Tools Used                              |
+|----------------|------------------------------------------|
+| Frontend       | React.js, Vite, Vanilla CSS, Framer Motion |
+| AI Integration | Groq LLM                                 |
+| Data Source    | IMDb API / OMDB                          |
+| Hosting        | Vercel (or Netlify, etc.)                |
+
+---
+
+## 🚀 Getting Started
+
+### 🔧 Installation
+
+```bash
+>> git clone https://github.com/daemonexe/QuantumFlicks-AI-.git
+>> cd QuantumFlicks-AI-
+>> cd frontend
+>> npm install
+>> npm run dev
