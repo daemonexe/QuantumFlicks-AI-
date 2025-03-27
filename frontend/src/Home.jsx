@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import './css/App.css';
-import Icon from "./assets/logo.png";
+import Icon from "./assets/qlogo.png";
+
 import videoBg from "/videoBG.mp4";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -86,12 +87,12 @@ function Home() {
     }
   };
 
-  const handleKeyDown = (e) => {com
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleSubmit();
     }
   };
-
+  
   
   return (
     <>
@@ -108,8 +109,9 @@ function Home() {
           muted 
           onLoadedMetadata={(e) => e.target.playbackRate = 2} 
         ></video>
-
+        
         <div className='content'>
+
           <div className='fieldBox'>
 
             {isLoading ? (
@@ -131,6 +133,10 @@ function Home() {
                   </button>
 
                   </div>
+                
+                <div className='title'>
+
+                <img className='logo' src={Icon} alt="Icon" />
 
                 {/* ✅ Animated Heading */}
                 <motion.h1
@@ -143,6 +149,7 @@ function Home() {
   
                   QuantumFlicks.AI
                 </motion.h1>
+                </div>
 
                 {/* ✅ Animated Paragraph */}
                 <motion.p
