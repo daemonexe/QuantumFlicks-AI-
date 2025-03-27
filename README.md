@@ -30,12 +30,14 @@ Not your average movie site.
 
 ## 🛠️ Tech Stack
 
-| Category       | Tools Used                              |
-|----------------|------------------------------------------|
-| Frontend       | React.js, Vite, Vanilla CSS, Framer Motion |
-| AI Integration | Groq LLM                                 |
-| Data Source    | IMDb API / OMDB                          |
-| Hosting        | Vercel (or Netlify, etc.)                |
+| Category        | Tools Used                                   |
+|------------------|----------------------------------------------|
+| Frontend         | React.js, Vite, Vanilla CSS, Framer Motion   |
+| Backend          | Node.js, Express.js                          |
+| AI Integration   | Groq LLM, Gemini (Google AI)                 |
+| Data/API         | OMDB API                                     |
+| Hosting          | Vercel / Render (Backend)       |
+
 
 ---
 
