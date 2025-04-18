@@ -5,6 +5,7 @@
   overflow: hidden;
 }
 
+
 .lp video {
   position: absolute;
   top: 0;
@@ -20,18 +21,23 @@
   position: absolute;
   text-align: left;
   color: white;
-  background-color: rgba(0, 0, 0, 0.683);
+  background-color: rgba(26, 26, 26, 0.683);
   z-index: 2; /* Ensure it's above the video */
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: left;
-  padding-top: 150px;
+  padding-top: 170px;
   padding-bottom: 300px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 35px;
+  padding-right: 0px;
   backdrop-filter: blur(1px);
 
+}
+.quote
+{
+  font-style: italic;
+  padding-bottom: 10px;
 }
 
 .search
@@ -56,7 +62,24 @@
   font-size: 3rem;
   margin: 0px;
   font-weight: bold;
+  background: linear-gradient(270deg, #ff4b2b, #ff416c, #2196f3, #ff4b2b);
+  background-size: 600% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientLoop 4s ease infinite;
 }
+
+@keyframes gradientLoop {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+
+
 
 p {
   font-size: 1.2rem;
@@ -66,8 +89,8 @@ p {
 }
 
 .input {
-  background-color: rgba(255, 255, 255, 0.701);
-  border: dashed 0px rgba(255, 255, 255, 0.525);
+  background-color: rgba(255, 255, 255, 0.807);
+  border: dashed 1px rgb(255, 255, 255);
   width: 350px;
   border-radius: 20px;
   margin-top: 15px;
@@ -188,7 +211,7 @@ button:hover {
 
 display: flex;
 flex-direction: row;
-width: 90%;
+width: 80%;
 height: 25%;
 margin: top 20px;
 }
@@ -220,7 +243,6 @@ font-size: 10px;
 {
 height: 25vw;
 
-border: 1px solid rgb(255, 0, 0);
 }
 
 
@@ -228,17 +250,16 @@ border: 1px solid rgb(255, 0, 0);
 @media (max-width: 768px) {
 .content
 {
-  width: 89%;
+  width: 85%;
   top:0px;
   margin: 0px;
-  margin-top: -20px;
 
 }
 
 .socials
 {
   margin-top: 30px;
-  margin-right: 55px;
+  margin-right: 5px;
 
 }
 
@@ -251,7 +272,8 @@ border: 1px solid rgb(255, 0, 0);
 
 .fieldBox
 {
-  margin-right: 50px;
+  padding-right: 5px;
+  padding-top: 30px;
 }
 
 .name
@@ -264,7 +286,7 @@ border: 1px solid rgb(255, 0, 0);
 {
   margin: 0px;
   margin-left: 35vw;
-  margin-bottom: 100px;
+  margin-bottom: 200vw;
 }
 
 .search-container

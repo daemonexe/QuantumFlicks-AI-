@@ -66,7 +66,7 @@ function Home() {
       setIsLoading(true);
 
       try {
-        const response = await fetch("https://qantflicksapi.onrender.com/search", {
+        const response = await fetch("http://localhost:5000/search", {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ movieName: inputValue }),
@@ -158,7 +158,8 @@ function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
                 >
-                  "AI-powered platform that automatically generates fan pages for movies and TV shows."
+                  "AI-powered platform that automatically generates fan pages for       movies 
+                  and TV shows."
                 </motion.p>
 
                 <motion.div className="search-container">

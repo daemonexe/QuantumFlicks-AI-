@@ -10,7 +10,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     background-color: rgba(14, 14, 14, 0.216);
-    width: 500px;
+    width: 300px;
     height: 35px;
     margin: 5px auto;
 }
@@ -72,7 +72,7 @@
 /* MOVIE CARD CONTAINER */
 .movieCard {
     position: relative;
-    width: 75%;
+    width: 59%;
     height: 80%;
     border-radius: 25px;
     margin: 15px auto;
@@ -80,7 +80,7 @@
     flex-direction: row; 
     justify-content: flex-start; 
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(35, 34, 34, 0.067);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(20px);
@@ -110,11 +110,12 @@
 
 .quizCard p
 {
-    padding: 0px;
+    padding: 5px;
 }
 .quizCard h1
 {
-    padding: 0px;
+    padding: 5px;
+    padding-left: 30px;
 }
 
 .options
@@ -127,7 +128,15 @@
 {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 5px;
+}
+
+.bt-1 
+{
+    position: absolute;
+    margin-left: -1200px;
+    margin-bottom: -100px;
+    
 }
 
 .options button
@@ -136,14 +145,30 @@
     height: 50px;
 }
 
-.movieBg {
+
+  
+  .movieBg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(500px); 
+      opacity: 0.75;
+      transform: scale(1.1);     /* slightly scale up so blur goes beyond box */
+
+      z-index: -1; 
+      color: red;
+      animation: slowZoom 30s ease-in-out infinite;
+  }
+  
+  .movieBg2 {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: blur(100px); 
-    opacity: 0.5;
-    z-index: -1; 
+    opacity: 0.1;
+    animation: slowZoom 30s ease-in-out infinite;
 }
 
 /* COVER IMAGE (LEFT SIDE) */
@@ -157,15 +182,51 @@
     margin-left: 50px; 
     border-radius: 10%;
 }
+
+.coverimage {
+    border-radius: 10%;
+    display: inline-block;
+    cursor: pointer;
+    will-change: transform;
+  }
+  
+
+  
+  .empty{
+    height: 50px;
+  }
+  
+  .coverimage {
+    border-radius: 10%;
+    display: inline-block;
+    cursor: pointer;
+    will-change: transform;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .summary-ppt{
+    background: #000;
+    width: 100%;
+    height: 100%;
+  }
+  .coverimage:hover {
+    transform: scale(1.05); 
+    border: 1.5px solid rgb(98, 98, 98)
+  }
+  
+
+  
+
 /* MOVIE CONTENT (RIGHT SIDE) */
 .movie-content {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    width: 75%;
-    margin-top: 100px;
+    width: 55%;
+    margin-top: 10px;
+    padding-left: 50px;
     height: 85%;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .movie-content h2 {
@@ -175,14 +236,14 @@
 
 .movie-content p {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.52;
 }
 
 .poster
 {
     width: 250px;
     border-radius: 10%;
-
+    margin-left: 30px;
 }
 
 .heading
@@ -246,8 +307,26 @@
     flex-direction: row;
     gap: 15px;
 }
+
+
+
+
+.box
+{
+    border: solid 1px red;
+    text-align: left;
+    justify-content: left;
+}
+
+
+.logob{
+    width: 50px;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
 .summaryContent {
-    width: 95%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -259,8 +338,35 @@
     word-wrap: break-word; /* Ensures text breaks properly */
     text-align: justify;
     justify-content: left;
+    padding-left: 15px;
 
 }
+
+@keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .poster
+{
+    margin-top: 22px;
+}
+  .scroll-animate {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-animate.visible {
+    animation: fadeSlideIn 0.8s ease forwards;
+  }
+  
+
 
 .summaryContent p {
     text-align: justify; /* ✅ Keeps it readable */
@@ -313,19 +419,6 @@ button:disabled {
 
   @media (max-width: 768px) {
 
-    .heading
-    {
-        font-size: 30px;
-        top:40px;
-    }
-
-    .scores
-    {
-        font-size: 30px;
-        top:5px;
-
-    }
-
     .message
     {
         top:-3px
@@ -363,8 +456,7 @@ button:disabled {
         margin-bottom: 30px;
         font-size: 19px;
         padding: 10px;
-        display: flex;
-        overflow-y: auto;
+        border:  1px solid blue;
         height: 90%;
     }
     .checker
@@ -374,31 +466,38 @@ button:disabled {
     }
     .navbar
     {
-        width: 300px;
+        width: 500px;
     }
     .movieCard
     {
+        padding: 0px;
+        margin-left: 50px;
+        margin-top: -10px;
         flex-direction: column;
-        overflow-y: auto;
+        overflow-y: none;
         overflow-x: none;
-        height: 85%;
+        height: 95%;
+        width: 100%;
     }
 
 
     .movie-content
     {
         margin: 0px;
+        margin-left: -10px;
     }
 
     .coverimage
     {
         margin: 0px;
+        padding-top: 10px;
     }
     .summaryContent
     {
-        padding: 20px;
         font-size: 15px;
-        margin-right: 5px;
+        margin-left: 65px;
+        
+
     }
 
     .summaryContent
@@ -447,3 +546,23 @@ button:disabled {
     background-color: rgba(0, 0, 0, 0); /* Track background */
     border-radius: 10px;
   }
+
+
+  /* Works on Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2); /* or transparent */
+    border-radius: 10px;
+  }
+  
+
+  
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff rgba(0, 0, 0, 0.2);
+  }
+  
