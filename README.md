@@ -5,7 +5,9 @@
 **QuantumFlicks.ai** is an AI-powered platform that brings movies and TV shows to life with rich, dynamically generated content. Instantly access AI-generated summaries, character bios, trivia, and interactive quizzes — all delivered through a fast, smooth, and animated user interface.
 
 ---
-## 🖥️ Live Demo
+
+![QuantumFlicks Demo](https://github.com/daemonexe/daemonexe/blob/main/Untitledvideo-MadewithClipchamp4-ezgif.com-video-to-gif-converter.gif?raw=true)
+
 
 ## ✨ Features
 
