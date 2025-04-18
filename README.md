@@ -1,4 +1,6 @@
-# 🎬 QuantumFlicks.ai
+# 🎬 QuantumFlicks.AI
+
+
 
 > Not your average movie site.
 
@@ -6,7 +8,7 @@
 
 ---
 
-![QuantumFlicks Demo](https://github.com/daemonexe/daemonexe/blob/main/Untitledvideo-MadewithClipchamp4-ezgif.com-video-to-gif-converter.gif?raw=true)
+![QuantumFlicks Demo](https://github.com/daemonexe/daemonexe/blob/main/Untitledvideo-MadewithClipchamp4-ezgif.com-video-to-gif-converter%20(1).gif?raw=true)
 
 
 ## ✨ Features
